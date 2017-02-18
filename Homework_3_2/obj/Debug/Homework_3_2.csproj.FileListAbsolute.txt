@@ -1,0 +1,6 @@
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\bin\Debug\Homework_3_2.exe.config
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\bin\Debug\Homework_3_2.exe
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\bin\Debug\Homework_3_2.pdb
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\obj\Debug\Homework_3_2.csprojResolveAssemblyReference.cache
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\obj\Debug\Homework_3_2.exe
+C:\C-Sharp-Course\Homework_3_2\Homework_3_2\obj\Debug\Homework_3_2.pdb
