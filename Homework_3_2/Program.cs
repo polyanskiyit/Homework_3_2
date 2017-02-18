@@ -31,11 +31,11 @@ namespace Homework_3_2
         {
             Console.Write("\nВведiть слово: ");
             string inputString = Console.ReadLine();
-
+            
+            //string outputString = inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch);
             //string outputString = new string(inputString.ToCharArray().Reverse().ToArray());
-            string outputString = inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch);
 
-            //string outputString = ReverseString(inputString);
+            string outputString = ReverseString(inputString);
 
             if (inputString == outputString)
             {
