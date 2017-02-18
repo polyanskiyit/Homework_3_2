@@ -37,25 +37,27 @@ namespace Homework_3_2
             return stringBuilder.ToString();
         }
 
+        //Найшвидший метод розвернення стрічки (небезпечний)
+        //static unsafe string ReverseUnsafeCopy(string str)
+        //{
+        //    if (str.Length <= 1) return str;
+        //    char tmp;
+        //    String copy = String.Copy(str);
+        //    fixed (char* buf = copy)
+        //    {
+        //        char* p = buf;
+        //        char* q = buf + str.Length - 1;
+        //        while (p < q)
+        //        {
+        //            tmp = *p;
+        //            *p = *q;
+        //            *q = tmp;
+        //            p++; q--;
+        //        }
+        //    }
+        //    return copy;
+        //}
 
-        static unsafe string ReverseUnsafeXorCopy(string str)
-        {
-            if (str.Length <= 1) return str;
-            String copy = String.Copy(str);
-            fixed (char* buf = copy)
-            {
-                char* p = buf;
-                char* q = buf + str.Length - 1;
-                while (p < q)
-                {
-                    *p ^= *q;
-                    *q ^= *p;
-                    *p ^= *q;
-                    p++; q--;
-                }
-            }
-            return copy;
-        }
 
 
 
@@ -68,9 +70,9 @@ namespace Homework_3_2
             //string outputString = inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch);
             //string outputString = new string(inputString.ToCharArray().Reverse().ToArray());
 
-            //string outputString = ReverseString(inputString);
+            string outputString = ReverseString(inputString);
             //string outputString = ReverseStringBuilder(inputString);
-            string outputString = ReverseUnsafeXorCopy(inputString);
+            //string outputString = ReverseUnsafeCopy(inputString);
 
             if (inputString == outputString)
             {
