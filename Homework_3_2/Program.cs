@@ -33,9 +33,9 @@ namespace Homework_3_2
             string inputString = Console.ReadLine();
 
             //string outputString = new string(inputString.ToCharArray().Reverse().ToArray());
-            //Console.WriteLine(inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch));
+            string outputString = inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch);
 
-            string outputString = ReverseString(inputString);
+            //string outputString = ReverseString(inputString);
 
             if (inputString == outputString)
             {
