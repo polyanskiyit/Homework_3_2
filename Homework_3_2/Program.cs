@@ -8,7 +8,7 @@ namespace Homework_3_2
 {
     class Program
     {
-        //Метод розвернення стрічки
+        //Простий метод розвернення стрічки
         static string ReverseString(string inputString)
         {
             int i = 0;
@@ -26,16 +26,51 @@ namespace Homework_3_2
         }
 
 
+        //Метод розвернення великих стрічкок
+        static string ReverseStringBuilder(string inputString)
+        {
+            StringBuilder stringBuilder = new StringBuilder(inputString.Length);
+            for(int i = inputString.Length; i-- != 0;)
+            {
+                stringBuilder.Append(inputString[i]);
+            }
+            return stringBuilder.ToString();
+        }
+
+
+        static unsafe string ReverseUnsafeXorCopy(string str)
+        {
+            if (str.Length <= 1) return str;
+            String copy = String.Copy(str);
+            fixed (char* buf = copy)
+            {
+                char* p = buf;
+                char* q = buf + str.Length - 1;
+                while (p < q)
+                {
+                    *p ^= *q;
+                    *q ^= *p;
+                    *p ^= *q;
+                    p++; q--;
+                }
+            }
+            return copy;
+        }
+
+
+
 
         static void Main(string[] args)
         {
             Console.Write("\nВведiть слово: ");
             string inputString = Console.ReadLine();
-            
+
             //string outputString = inputString.Reverse().Aggregate(string.Empty, (acc, ch) => acc + ch);
             //string outputString = new string(inputString.ToCharArray().Reverse().ToArray());
 
-            string outputString = ReverseString(inputString);
+            //string outputString = ReverseString(inputString);
+            //string outputString = ReverseStringBuilder(inputString);
+            string outputString = ReverseUnsafeXorCopy(inputString);
 
             if (inputString == outputString)
             {
